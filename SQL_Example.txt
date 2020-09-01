@@ -1,0 +1,6 @@
+SELECT a.id, a.name, l.lessonname, l.lessonterm 
+FROM dbo.academicians a WITH (NOLOCK)
+INNER JOIN dbo.lessons l WITH (NOLOCK)
+ON a.id = l.academicianid
+WHERE l.lessonname LIKE '%Bilgisayar%' AND a.faculty LIKE 'Çorlu Müh%'
+ORDER BY a.id DESC
